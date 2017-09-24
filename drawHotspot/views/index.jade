@@ -1,0 +1,48 @@
+extends layout
+
+block styles
+  link(rel="stylesheet", href="/styles/index.css")
+
+block content
+  .input-box
+    input.image-input(type="text", value="//img10.360buyimg.com/imgzone/jfs/t8992/28/1986380003/121948/ce3c8562/59c249cfN5bf2ba89.jpg")
+    button.image-btn.btn.btn-primary 生成图片
+
+  .draw-box
+
+  .link-input-box
+
+  button.get-codes.btn.btn-primary 生成代码
+  textarea.codes-area
+
+  form(method="post", action="/preview", target="_blank")
+    input.input-codes(type="hidden", name="codes", value="请绘画热区")
+    .preview-btn.btn.btn-primary 预览
+
+
+  script(type="text/template" id="tpl-hotspot").
+    <div class="hotspot hotspot-{{count}}" index="{{count}}">
+      <div class="content">
+        <p>热区{{count}}</p>
+      </div>
+      <div class="mask"></div>
+      <span class="close" index="{{count}}">x</span>
+    </div>
+
+  script(type="text/template" id="tpl-link-input").
+    <div class="link-input-group form-group" index="{{count}}">
+      <p class="text-center">热区{{count}}</p>
+      <input class="link-input" type="text" index="{{count}}">
+    </div>
+
+
+  script(type="text/template" id="tpl-codes").
+    <img src="{{drawImgSrc}}" usemap="{{md5}}">
+    <map name="{{md5}}">{{each coordinate as item}}
+        <area shape="rect" coords="{{item.leftTop}}, {{item.rightTop}}, {{item.rightBottom}}, {{item.leftBottom}}" href="{{item.link}}" target="_blank">{{/each}}
+    </map>
+
+
+block scripts
+  script(src="/scripts/index.js")
+  script(src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js")

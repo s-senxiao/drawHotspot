@@ -1,0 +1,86 @@
+.image-input {
+    display: block;
+    margin: 100px auto 0;
+    width: 800px;
+    height: 40px;
+}
+
+.image-btn {
+    display: block;
+    margin: 30px auto;
+}
+
+.draw-box {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 50px auto 0;
+    background: #44ABF2;
+    overflow: auto;
+}
+
+.draw-box .hotspot {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 1px solid red;
+    cursor: pointer;
+}
+
+.draw-box .hotspot .content {
+    display: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.draw-box .hotspot .mask {
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.draw-box .hotspot .close {
+    z-index: 10;
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.link-input-box {
+    margin-top: 30px;
+}
+
+.link-input {
+    display: block;
+    margin: 0 auto 20px;
+    width: 600px;
+    height: 30px;
+}
+
+.get-codes {
+    display: block;
+    margin: 30px auto 30px;
+}
+
+.codes-area {
+    display: block;
+    margin: auto;
+    width: 500px;
+    height: 200px;
+}
+
+.preview-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}

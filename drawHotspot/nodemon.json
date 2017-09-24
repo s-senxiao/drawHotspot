@@ -1,0 +1,4 @@
+{
+  "ignore":["public", "views", "node_modules"]
+
+}
